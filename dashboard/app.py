@@ -6,9 +6,7 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 import os
 
-# ================================
 # LOAD DATA
-# ================================
 
 dataset_path = os.path.join(os.path.dirname(__file__), "..", "dataset", "AB_NYC_2019_CleanedData.csv")
 df = pd.read_csv(dataset_path)
@@ -19,16 +17,12 @@ df["reviews_per_month"] = df["reviews_per_month"].fillna(0)
 df["availability_365"] = df["availability_365"].fillna(0)
 df["occupancy_rate"] = (365 - df["availability_365"]) / 365 * 100
 
-# ================================
 # APP INITIALIZATION
-# ================================
 
 app = Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
 
-# ================================
 # COLOR PALETTE - Neutral & Inclusive
-# ================================
 
 # Neutral Professional Colors
 COLORS = {
@@ -48,9 +42,7 @@ COLORS = {
 # Color scale for gradients
 COLOR_SCALE_GRADIENT = [[0, "#99F6E4"], [0.5, "#A5B4FC"], [1, "#FED7AA"]]
 
-# ================================
 # HELPER FUNCTIONS
-# ================================
 
 def get_kpi_card(title, value, color_class="slate"):
     """Create a KPI card with CSS class styling"""
@@ -99,9 +91,7 @@ def apply_chart_template(fig, title=""):
     )
     return fig
 
-# ================================
 # APP LAYOUT
-# ================================
 
 app.layout = html.Div(
     style={
@@ -248,9 +238,7 @@ app.layout = html.Div(
     ]
 )
 
-# ================================
 # CALLBACKS
-# ================================
 
 @app.callback(
     Output("kpi-container", "children"),
@@ -452,7 +440,6 @@ def update_charts(selected_boroughs, selected_rooms, selected_price, min_reviews
 
     return fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8, fig9, fig10
 
-# ================================
 # RUN APP
 # ================================
 
