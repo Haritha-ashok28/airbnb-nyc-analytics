@@ -1,0 +1,381 @@
+/* ================================
+   NYC AIRBNB ANALYTICS DASHBOARD
+   Color Palette: Neutral & Inclusive
+   ================================ */
+
+:root {
+    /* Neutral Inclusive Palette */
+    --primary-bg: #F8F9FA;          /* Off-white background */
+    --secondary-bg: #FFFFFF;         /* White cards */
+    --header-bg: #475569;            /* Slate gray header */
+    --header-gradient: linear-gradient(135deg, #475569 0%, #64748B 100%);
+    
+    /* Accent Colors - Neutral & Professional */
+    --accent-teal: #0D9488;          /* Teal - warm, neutral */
+    --accent-slate: #64748B;         /* Slate - balanced */
+    --accent-indigo: #4F46E5;        /* Indigo - professional */
+    --accent-emerald: #059669;       /* Emerald - fresh */
+    --accent-amber: #D97706;         /* Amber - warm neutral */
+    
+    /* Pastel Accents - Soft & Professional */
+    --pastel-teal: #99F6E4;          /* Soft teal */
+    --pastel-indigo: #A5B4FC;        /* Soft indigo */
+    --pastel-slate: #CBD5E1;         /* Soft slate */
+    --pastel-emerald: #86EFAC;       /* Soft emerald */
+    --pastel-amber: #FED7AA;         /* Soft amber */
+    
+    /* Text Colors */
+    --text-primary: #1F2937;         /* Dark gray */
+    --text-secondary: #6B7280;       /* Medium gray */
+    --text-light: #9CA3AF;           /* Light gray */
+    --text-white: #FFFFFF;           /* White */
+    
+    /* Borders & Shadows */
+    --border-color: #E5E7EB;         /* Light gray border */
+    --shadow: 0 4px 15px rgba(71, 85, 105, 0.12);
+    --shadow-sm: 0 2px 8px rgba(71, 85, 105, 0.08);
+}
+
+/* ================================
+   GLOBAL STYLES
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* ================================
+   LAYOUT STYLES
+   ================================ */
+
+._dash_icy {
+    background-color: var(--primary-bg) !important;
+    padding: 0 !important;
+}
+
+/* ================================
+   HEADER & TYPOGRAPHY
+   ================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.875rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ================================
+   CARDS & CONTAINERS
+   ================================ */
+
+.kpi-card {
+    background-color: var(--secondary-bg);
+    padding: 1.75rem;
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--accent-slate);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.kpi-card.teal {
+    border-left-color: var(--accent-teal);
+}
+
+.kpi-card.indigo {
+    border-left-color: var(--accent-indigo);
+}
+
+.kpi-card.emerald {
+    border-left-color: var(--accent-emerald);
+}
+
+.kpi-card.amber {
+    border-left-color: var(--accent-amber);
+}
+
+.kpi-card.slate {
+    border-left-color: var(--accent-slate);
+}
+
+.kpi-title {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.kpi-subtitle {
+    color: var(--text-light);
+    font-size: 0.6875rem;
+}
+
+/* ================================
+   HEADER SECTION
+   ================================ */
+
+.dashboard-header {
+    background: var(--header-gradient);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(71, 85, 105, 0.15);
+    color: var(--text-white);
+}
+
+.dashboard-header h1 {
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.dashboard-header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ================================
+   FILTERS SECTION
+   ================================ */
+
+.filters-section {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 5px solid var(--accent-slate);
+}
+
+.filters-section h4 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filter-item {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.8125rem;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ================================
+   FORM ELEMENTS
+   ================================ */
+
+.Select-control,
+.Select-menu-outer,
+input[type="range"] {
+    border-color: var(--border-color) !important;
+}
+
+.Select-value-label {
+    color: var(--text-primary) !important;
+}
+
+.Select-placeholder {
+    color: var(--text-light) !important;
+}
+
+.Select-option.is-selected {
+    background-color: var(--accent-indigo) !important;
+}
+
+.Select-option.is-focused {
+    background-color: var(--pastel-indigo) !important;
+}
+
+/* ================================
+   KPI CONTAINER
+   ================================ */
+
+.kpi-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   CHARTS SECTION
+   ================================ */
+
+.chart-container {
+    width: 48%;
+    min-width: 400px;
+    background-color: var(--secondary-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    padding: 0.75rem;
+    overflow: hidden;
+}
+
+.chart-row {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   MAP & FULL WIDTH ELEMENTS
+   ================================ */
+
+.map-container {
+    background-color: var(--secondary-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+
+.heatmap-container {
+    background-color: var(--secondary-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+/* ================================
+   PLOTLY CHART STYLING
+   ================================ */
+
+.plotly {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+.plotly-graph-div {
+    background-color: var(--secondary-bg) !important;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 1200px) {
+    .chart-container {
+        width: 100% !important;
+    }
+    
+    .filter-item {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 1.5rem;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .filters-section {
+        padding: 1.5rem;
+    }
+    
+    .kpi-card {
+        min-width: 100%;
+    }
+}
+
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+
+.flex-row {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-light);
+}
+
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+.p-0 { padding: 0; }
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
